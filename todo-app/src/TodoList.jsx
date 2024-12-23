@@ -5,6 +5,9 @@ function TodoList() {
 
     const [todos, setTodos] = useState([]);
     const [newTodo, setNewTodo] = useState("");
+    const [todoId, setTodoId] = useState(null);
+    const [task, setTask] = useState("");
+    
     function addTodo() {
 
         if (newTodo.trim()) {
@@ -34,6 +37,25 @@ function TodoList() {
     const removeTodo = (id) => {
         setTodos(todos.filter((todo) => todo.id !== id));
     };
+    function EditText(id, newText) {
+        setTodoId(id)
+        setTask(newText)
+    }
+    function saveEditTask(id) {
+        setTodos(
+            todos.map((todo) => todo.id === id ? { ...todo, text: task } : todo)
+        )
+        setTodoId(null)
+        setTask("")
+    }
+    function removeTask() {
+        setTodoId(null)
+        setTask("")
+    }
+    function changeTheme(color) {
+        setThemeColor(color);
+    };
+
 
 
 
@@ -62,8 +84,22 @@ function TodoList() {
 
             <ul className='container-ul'>
                 {todos.map((todo) => (
-                    <li key={todo.id} onClick={() => toggleComplete(todo.id)}>
-                        <div>
+                    <li key={todo.id} >
+                        {todoId == todo.id ? (
+                            <div>
+                                <input
+                                    type="text"
+                                    value={task}
+                                    onChange={(e) => setTask(e.target.value)}
+                                    className="edit-input"
+                                />
+                                <button onClick={() => saveEditTask(todo.id)} className="save-button">Save</button>
+                                <button onClick={removeTask} className="cancel-button">Cancel</button>
+                            </div>
+                        )
+                            :
+
+                        <div onClick={() => toggleComplete(todo.id)}>
 
 
                             {todo.text}
@@ -74,7 +110,11 @@ function TodoList() {
                             </div>
 
                         </div>
-                        <div>
+                        }
+                        <div className='div-buttons'>
+                            <div >
+                                <button onClick={() => EditText(todo.id, todo.text)} className="edit-button">Edit</button>
+                            </div>
                             <CiCircleRemove onClick={(e) => {
                                 e.stopPropagation();
                                 removeTodo(todo.id);
