@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.div-container {
+  background-color: rgb(211, 240, 204);
+  margin-top: -22px;
+  height: 80px;
+}
+
+.div-container h1 {
+  color: #9a3f6b;
+  text-align: center;
+  padding-top: 20px;
+
+}
+
+.div-container-input {
+  width: 700px;
+  height: 30px;
+  margin-left: 400px;
+  margin-top: 50px;
+  border: none;
+  border-bottom: 3px solid rgb(211, 240, 204);
+  /* Yeşil alt çerçeve */
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+
+
+
+}
+
+.add-button {
+  margin-left: 50px;
+  width: 100px;
+  background-color: #fff;
+  height: 35px;
+  border-radius: 5px;
+  border-color: rgb(104, 225, 104);
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+
+}
+
+.add-button:hover {
+  background-color: rgb(211, 240, 204);
+  color: #9a3f6b;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.container-ul {
+  width: 700px;
+  height: 40px;
+  margin-right: 100px;
+  margin-left: 400px;
+  margin-top: 50px;
+  list-style-type: none;
+
+
+}
+
+.container-ul li {
+  border-radius: 5px;
+  border-style: 3px solid rgb(211, 240, 204);
+  margin-left: -42px;
+  height: 40px;
+  background-color: rgb(211, 240, 204);
+  width: 715px;
+  color: #9a3f6b;
+  margin-bottom: 20px;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  padding-left: 15px;
+  justify-content: space-between;
+
+}
+
+.CiCircleRemove {
+  cursor: pointer;
+  padding-right: 10px;
+  width: 25px;
+  height: 25px;
+  padding-top: 4px;
+  margin-left: 5px;
+
+}
+
+.date-container {
+  font-size: 10px;
+  padding-top: 2px;
+}
+
+.edit-button {
+  border: none;
+  color: #9a3f6b;
+  cursor: pointer;
+  margin-top: 6px;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  background-color: transparent;
+  border-color: #9a3f6b;
+  border-radius: 5px;
+  border: solid 1px;
+}
+
+.div-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-button {
+  border: none;
+  color: #9a3f6b;
+  cursor: pointer;
+  margin-top: 6px;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  background-color: transparent;
+  border-color: #9a3f6b;
+  border-radius: 5px;
+  border: solid 1px;
+  margin: 5px 5px;
+}
+
+.cancel-button {
+  border: none;
+  color: #9a3f6b;
+  cursor: pointer;
+  margin-top: 6px;
+  width: 60px;
+  height: 20px;
+  text-align: center;
+  background-color: transparent;
+  border-color: #9a3f6b;
+  border-radius: 5px;
+  border: solid 1px
+}
+
+.edit-input {
+  width: 400px;
+  height: 30px;
+  margin-left: -10px;
+  border: none;
+  border-radius: 5px;
+}
