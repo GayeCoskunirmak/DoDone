@@ -5,38 +5,24 @@ body {
 
 .div-container {
   background-color: rgb(211, 240, 204);
-  margin-top: -22px;
-  height: 80px;
+  height: 70px;
 }
 
 .div-container h1 {
   color: #9a3f6b;
   text-align: center;
-  padding-top: 20px;
+  margin-top: -45px;
+  margin-bottom: 50px;
 
 }
 
-.div-container-input {
-  width: 700px;
-  height: 30px;
-  margin-left: 400px;
-  margin-top: 50px;
-  border: none;
-  border-bottom: 3px solid rgb(211, 240, 204);
-  /* Yeşil alt çerçeve */
-  padding: 10px;
-  font-size: 16px;
-  outline: none;
-  transition: border-color 0.3s ease;
 
-
-
-}
 
 .add-button {
   margin-left: 50px;
   width: 100px;
   background-color: #fff;
+  color: #9a3f6b;
   height: 35px;
   border-radius: 5px;
   border-color: rgb(104, 225, 104);
@@ -51,13 +37,15 @@ body {
   color: #9a3f6b;
   font-weight: bolder;
   font-size: large;
+  border-color: rgb(51, 114, 36);
+
 }
 
 .container-ul {
   width: 700px;
   height: 40px;
   margin-right: 100px;
-  margin-left: 400px;
+  margin-left: 430px;
   margin-top: 50px;
   list-style-type: none;
 
@@ -84,30 +72,49 @@ body {
 .CiCircleRemove {
   cursor: pointer;
   padding-right: 10px;
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   padding-top: 4px;
-  margin-left: 5px;
+  margin-left: 10px;
+  justify-content: center;
+  margin-top: 10px;
 
 }
 
 .date-container {
   font-size: 10px;
-  padding-top: 2px;
+  margin-bottom: -6px;
 }
 
 .edit-button {
   border: none;
   color: #9a3f6b;
   cursor: pointer;
-  margin-top: 6px;
-  width: 50px;
-  height: 20px;
   text-align: center;
+  font-size: small;
+  margin-top: 6px;
+  padding-bottom: 25px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 50px;
+  height: 10px;
   background-color: transparent;
   border-color: #9a3f6b;
   border-radius: 5px;
   border: solid 1px;
+
+}
+
+.edit-button:active,
+.edit-button:hover {
+  font-weight: bold;
+  background-color: #fff;
+  color: #9a3f6b;
+}
+
+.btn {
+  --bs-btn-hover-bg: #047220;
+  --bs-btn-active-bg: #047220;
 }
 
 .div-buttons {
@@ -120,6 +127,9 @@ body {
   color: #9a3f6b;
   cursor: pointer;
   margin-top: 6px;
+  padding-bottom: 25px;
+  margin-bottom: 10px;
+  font-size: small;
   width: 50px;
   height: 20px;
   text-align: center;
@@ -134,10 +144,14 @@ body {
   border: none;
   color: #9a3f6b;
   cursor: pointer;
-  margin-top: 6px;
-  width: 60px;
+  margin-top: 10px;
+  padding-bottom: 25px;
+  margin-bottom: 10px;
+  padding-right: 50px;
+  font-size: small;
+  width: 50px;
   height: 20px;
-  text-align: center;
+  text-align: left;
   background-color: transparent;
   border-color: #9a3f6b;
   border-radius: 5px;
@@ -150,4 +164,152 @@ body {
   margin-left: -10px;
   border: none;
   border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+
+}
+
+.light-btn {
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 100px;
+  background-color: rgb(211, 240, 204);
+  color: #9a3f6b;
+  height: 35px;
+  border-radius: 5px;
+  border-color: rgb(104, 225, 104);
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+
+}
+
+.light-btn:hover {
+  background-color: #fff;
+  color: #9a3f6b;
+  font-weight: bolder;
+  border-color: rgb(51, 114, 36);
+}
+
+
+
+.input-form1 {
+
+  width: 700px;
+  margin-left: 300px;
+  height: 50px;
+  padding-left: 200px;
+  display: flex;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-bottom: 3px solid rgb(211, 240, 204);
+  /* Yeşil alt çerçeve */
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-form1:focus {
+  outline: none;
+  /* mavi dış çerçeveyi siler*/
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  border-color: rgb(211, 240, 204);
+
+}
+
+.input-add-btn {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.text-container :focus {
+  cursor: text;
+  outline: none;
+  /* mavi dış çerçeveyi siler*/
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  border-color: rgb(211, 240, 204);
+
+}
+
+.save-cancel-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-container {
+  margin-bottom: 10px;
+}
+
+.form-li {
+  margin-top: 11px;
+}
+
+.cancel-button:hover {
+  background-color: #fff;
+  color: #9a3f6b;
+  font-weight: bolder;
+  border-color: rgb(51, 114, 36);
+
+}
+
+.save-button:hover {
+  background-color: #fff;
+  color: #9a3f6b;
+  font-weight: bolder;
+  border-color: rgb(51, 114, 36);
+
+}
+
+.div-container.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.div-container.dark .container-ul li {
+  background-color: #444;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.div-container.dark button {
+  background-color: #555;
+  color: #fff;
+  border: none;
+}
+
+.div-container.dark .CiCircleRemove {
+  color: #ff4444;
+}
+
+.div-container.dark h1 {
+  color: #fff;
+}
+
+.div-container.dark .input-form1 {
+  width: 700px;
+  margin-left: 300px;
+  height: 50px;
+  padding-left: 200px;
+  display: flex;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-bottom: 3px solid #9a8a8a;
+  /* Yeşil alt çerçeve */
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.div-container.dark .input-form1:focus {
+  outline: none;
+  /* mavi dış çerçeveyi siler*/
+  box-shadow: 0 0 5px #9a8a8a;
+  border-color: #9a8a8a;
 }

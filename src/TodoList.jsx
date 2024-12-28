@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { CiCircleRemove } from "react-icons/ci";
 import { Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function TodoList() {
@@ -9,6 +11,7 @@ function TodoList() {
     const [newTodo, setNewTodo] = useState("");
     const [todoId, setTodoId] = useState(null);
     const [task, setTask] = useState("");
+    const [theme, setTheme] = useState("light");
 
 
     function addTodo() {
@@ -56,50 +59,71 @@ function TodoList() {
         setTodoId(null)
         setTask("")
     }
-
+    function toggleTheme() {
+        setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    }
 
     return (
-        < div className="div-container">
+        < div className={`div-container ${theme}`}>
+
+
+
+            <Button onClick={toggleTheme} className='light-btn'>  {theme === "light" ? " Dark Mode" : " Light Mode"}</Button>
+
+
 
 
             <div>
                 <h1>TODO LİST</h1>
             </div>
 
-            <div style={{ marginTop: 20 }}>
-                <input
-                    type="text"
-                    value={newTodo}
-                    onChange={(e) => setNewTodo(e.target.value)}
-                    placeholder="Enter a task"
-                    className='div-container-input'
-                />
+            <div className="container mt-5">
+                <Form className='input-add-btn'>
+                    <Form.Group >
+                        <Form.Control type="text"
+                            value={newTodo}
+                            onChange={(e) => setNewTodo(e.target.value)}
+                            placeholder="Enter a task"
+                            className='input-form1'
 
+                        />
+                    </Form.Group>
 
-
-                <Button onClick={addTodo} className='add-button'>Add</Button>
-
+                    <Button onClick={addTodo} className='add-button'>Add</Button>
+                </Form>
             </div>
+
+
+
 
 
             <ul className='container-ul'>
                 {todos.map((todo) => (
                     <li key={todo.id}  >
                         {todoId == todo.id ? (
-                            <div>
-                                <input
-                                    type="text"
-                                    value={task}
-                                    onChange={(e) => setTask(e.target.value)}
-                                    className="edit-input"
-                                />
-                                <Button onClick={() => saveEditTask(todo.id)} className="save-button">Save</Button>
-                                <Button onClick={removeTask} className="cancel-button">Cancel</Button>
+                            <div className='save-cancel-div'>
+                                <div className='form-li'>
+
+                                    <Form >
+                                        <Form.Control
+
+                                            type="text"
+                                            value={task}
+                                            onChange={(e) => setTask(e.target.value)}
+                                            className="edit-input"
+                                        />
+                                    </Form>
+                                </div>
+                                <div>
+
+                                    <Button onClick={() => saveEditTask(todo.id)} className="save-button">Save</Button>
+                                    <Button onClick={removeTask} className="cancel-button">Cancel</Button>
+                                </div>
                             </div>
                         )
                             :
 
-                            <div onClick={() => toggleComplete(todo.id)}>
+                            <div onClick={() => toggleComplete(todo.id)} className='text-container'>
 
                                 {todo.text}
 
@@ -111,7 +135,7 @@ function TodoList() {
                             </div>
                         }
                         <div className='div-buttons'>
-                            <div >
+                            <div className='btn-edit'>
                                 <Button onClick={() => EditText(todo.id, todo.text)} className="edit-button">Edit</Button>
                             </div>
 
